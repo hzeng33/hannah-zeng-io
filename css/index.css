@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap");
+
+body {
+  background-color: mintcream;
+  font-family: "Literata", serif;
+  margin: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.profile-image {
+  height: 250px;
+  border-radius: 50%;
+  border: 6px solid #2e6878;
+  margin-right: 20px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.name {
+  font-size: 60px;
+  margin: 0;
+  color: #16537e;
+}
+
+.subtitle {
+  font-size: 28px;
+  margin: 0;
+}
+
+section {
+  padding: 10px;
+  margin: 20px;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+#about {
+  border-bottom: 1px solid black;
+}
+
+#experience {
+  border-bottom: 1px solid black;
+}
+
+#project {
+  border-bottom: 1px solid black;
+}
+
+#skills {
+  border-bottom: 1px solid black;
+}
