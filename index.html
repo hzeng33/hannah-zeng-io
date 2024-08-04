@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Hannah Zeng's Portfolio</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
 
   <body>
-    <h1>Hannah Zeng</h1>
-    <img
-      src="image/Me2.jpg"
-      alt="A photo of myself"
-      width="289px"
-      height="365px"
-    />
+    <header class="header">
+      <img
+        src="image/Me2.jpg"
+        class="profile-image"
+        alt="A photo of Hannah Zeng"
+      />
+      <div class="header-content">
+        <h1 class="name">Hannah Zeng</h1>
+        <p class="subtitle">Dedicated | Aspiring | Curious</p>
+      </div>
+    </header>
+
     <section id="about">
       <h2>About</h2>
       <p>
@@ -35,65 +41,129 @@
 
     <section id="experience">
       <h2>Experience</h2>
+      <h4>
+        <em>Web Development Teaching Assistant </em> @ CodePath | Jan 2023 - Dec
+        2023
+      </h4>
       <ul>
         <li>
-          <em>Web Development Teaching Assistant </em> @ CodePath
-          <ul>
-            <li>
-              facilitated 15+ students with technical support of lab assignments
-              in enforcing HTML, CSS, JavaScript, React, APIs, and database
-              learning.
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <em>Web Development Fellow</em> @ CUNY Tech Prep
-          <ul>
-            <li>
-              Selected for a competitive web development fellowship with
-              students from across the 11 CUNY senior colleges to work in teams
-              to design, develop, and deploy technical projects using tools such
-              as React, Node + Express, and PostgreSQL.
-            </li>
-            <li>
-              Project
-              <ul>
-                <li>
-                  <em>Recipe Square</em> - It's a full-stack web application
-                  independently that allows users to search for recipes and to
-                  share their favorite recipes. It Implemented CRUD
-                  functionality for users to create their favorite recipes and
-                  efficiently manage existing recipes through Material UI
-                  components.
-                </li>
-                <li>
-                  <em>Fitopolis</em> - Built an ecommerce website within a team
-                  of 3 that enabled users to buy and sell second-hand sport
-                  items.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <em>Substitute Paraprofessional</em> @ New York City Department of
-          Education
-          <ul>
-            <li>
-              Supported classroom teachers with reinforcing Math and English
-              learning to 6+ students individually and in groups, and provided
-              language assistance in Mandarin and Cantonese for bilingual
-              students.
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <em>Medical Office Receptionist</em>
+          Facilitated 15+ students with technical support of lab assignments in
+          enforcing HTML, CSS, JavaScript, React, APIs, and database learning.
         </li>
       </ul>
+
+      <h4>
+        <em>Web Development Fellow</em> @ CUNY Tech Prep | Jul 2022 - Jun 2023
+      </h4>
+      <ul>
+        <li>
+          Selected for a competitive web development fellowship with students
+          from across the 11 CUNY senior colleges to work in teams to design,
+          develop, and deploy technical projects using tools such as React, Node
+          + Express, and PostgreSQL.
+        </li>
+      </ul>
+
+      <h4>
+        <em>Substitute Paraprofessional</em> @ New York City Department of
+        Education | Mar 2018 - May 2024
+      </h4>
+      <ul>
+        <li>
+          Assisted students individually and in small groups of 4-5 to ensure
+          the student's comprehension of the subject and skills introduced by
+          the classroom teacher.
+        </li>
+        <li>
+          Provided language assistance in Mandarin and Cantonese for bilingual
+          students.
+        </li>
+      </ul>
+
+      <h4>
+        <em>Medical Office Receptionist</em> @ FLUSHING ENDOSCOPY CENTER, LLC |
+        Jun 2017 - Jan 2018
+      </h4>
+      <ul>
+        <li>
+          Registered and verified personal information and medical insurance
+          eligibility of 30+ patients every morning in a fast-paced environment,
+          and achieved patients' satisfactory rate above 95%.
+        </li>
+        <li>Scheduled and confirmed patients’ next-day appointments.</li>
+      </ul>
+    </section>
+
+    <section id="project">
+      <h2>Technical Projects</h2>
+      <h4>
+        Recipe Square |
+        <a href="https://github.com/hzeng33/Recipe-Square">GitHub Link</a> | Apr
+        2023 - May 2023
+      </h4>
+      <p>
+        Recipe Square is a simple recipe sharing platform that enable users to
+        search for recipes and to share their favorite recipes. It also allows
+        users to perform the CRUD (create, read, update, delete) operations.
+      </p>
+
+      <h4>
+        Fitopolis |
+        <a href="https://github.com/irao12/fitopolis">GitHub Link</a> | Oct 2022
+        - Dec 2022
+      </h4>
+      <p>
+        Built an full-stack ecommerce website within a team of 3 that enabled
+        users to buy and sell second-hand sport items.
+      </p>
+
+      <h4>
+        Learn Morse Code |
+        <a href="https://github.com/hzeng33/Learn-Morse-Code">GitHub Link</a> |
+        May 2023
+      </h4>
+      <p>
+        This is a simple Morse Code learning app built using React. My team
+        built this web app for educational purpose. Students who are interested
+        in crytography can learn the Morse Code by playing a practice game on
+        the app. It is also a nostalgia that Morse Code is a historic method of
+        communication that was widely used in the past.
+      </p>
+
+      <h4>
+        Web Based Text Parser |
+        <a href="https://venus.cs.qc.cuny.edu/~zeha6333/cs355/parse.html"
+          >Webpage Link</a
+        >
+        | Aug 2022
+      </h4>
+      <p>
+        A web-based parser of literary texts that will report on the word
+        frequencies of the texts being parsed. This has applications in general,
+        but especially to the rising field known as "Digital Humanities.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <table>
+        <tr>
+          <td>Programming Languages:</td>
+          <td>Java, JavaScript, HTML5, CSS, Python</td>
+        </tr>
+        <tr>
+          <td>Databases:</td>
+          <td>SQL, PostgreSQL, MySQL</td>
+        </tr>
+        <tr>
+          <td>Tools and Platforms:</td>
+          <td>GitHub, Git, VSCode, Eclipse</td>
+        </tr>
+        <tr>
+          <td>Spoken Languages:</td>
+          <td>Mandarin, Cantonese</td>
+        </tr>
+      </table>
     </section>
 
     <section id="connect">
