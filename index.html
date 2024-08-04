@@ -5,18 +5,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
-    <header class="header">
-      <img
-        src="image/Me2.jpg"
-        class="profile-image"
-        alt="A photo of Hannah Zeng"
-      />
-      <div class="header-content">
-        <h1 class="name">Hannah Zeng</h1>
-        <p class="subtitle">Dedicated | Aspiring | Curious</p>
+    <header>
+      <div class="container">
+        <div class="upper-content">
+          <img
+            class="profile-image"
+            src="image/Me2.jpg"
+            alt="A photo of Hannah Zeng"
+          />
+          <div class="header-content">
+            <h1 class="name">Hannah Zeng</h1>
+            <div class="subtitle">Dedicated | Aspiring | Perseverant</div>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -41,138 +59,83 @@
 
     <section id="experience">
       <h2>Experience</h2>
-      <h4>
-        <em>Web Development Teaching Assistant </em> @ CodePath | Jan 2023 - Dec
-        2023
-      </h4>
-      <ul>
-        <li>
+      <div class="experience-container">
+        <!--First job-->
+        <div class="job-title-date-container">
+          <div class="job-title">
+            <em>Web Development Teaching Assistant </em> @ CodePath
+          </div>
+          <div class="job-date">Jan 2023 - Dec 2023</div>
+        </div>
+        <div class="job-description">
           Facilitated 15+ students with technical support of lab assignments in
           enforcing HTML, CSS, JavaScript, React, APIs, and database learning.
-        </li>
-      </ul>
+        </div>
 
-      <h4>
-        <em>Web Development Fellow</em> @ CUNY Tech Prep | Jul 2022 - Jun 2023
-      </h4>
-      <ul>
-        <li>
+        <!--Second job-->
+        <div class="job-title-date-container">
+          <div class="job-title">
+            <em>Web Development Fellow</em> @ CUNY Tech Prep
+          </div>
+          <div class="job-date">Jul 2022 - Jun 2023</div>
+        </div>
+        <div class="job-description">
           Selected for a competitive web development fellowship with students
           from across the 11 CUNY senior colleges to work in teams to design,
           develop, and deploy technical projects using tools such as React, Node
           + Express, and PostgreSQL.
-        </li>
-      </ul>
+        </div>
 
-      <h4>
-        <em>Substitute Paraprofessional</em> @ New York City Department of
-        Education | Mar 2018 - May 2024
-      </h4>
-      <ul>
-        <li>
+        <!--Third job-->
+        <div class="job-title-date-container">
+          <div class="job-title">
+            <em>Substitute Paraprofessional</em> @ New York City Department of
+            Education
+          </div>
+          <div class="job-date">Mar 2018 - May 2024</div>
+        </div>
+        <div class="job-description">
           Assisted students individually and in small groups of 4-5 to ensure
           the student's comprehension of the subject and skills introduced by
-          the classroom teacher.
-        </li>
-        <li>
-          Provided language assistance in Mandarin and Cantonese for bilingual
-          students.
-        </li>
-      </ul>
+          the classroom teacher. Also Provided language assistance in Mandarin
+          and Cantonese for bilingual students.
+        </div>
 
-      <h4>
-        <em>Medical Office Receptionist</em> @ FLUSHING ENDOSCOPY CENTER, LLC |
-        Jun 2017 - Jan 2018
-      </h4>
-      <ul>
-        <li>
+        <!--Fourth job-->
+        <div class="job-title-date-container">
+          <div class="job-title">
+            <em>Medical Office Receptionist</em> @ FLUSHING ENDOSCOPY CENTER,
+            LLC
+          </div>
+          <div class="job-date">Jun 2017 - Jan 2018</div>
+        </div>
+        <div class="job-description">
           Registered and verified personal information and medical insurance
           eligibility of 30+ patients every morning in a fast-paced environment,
-          and achieved patients' satisfactory rate above 95%.
-        </li>
-        <li>Scheduled and confirmed patients’ next-day appointments.</li>
-      </ul>
-    </section>
-
-    <section id="project">
-      <h2>Technical Projects</h2>
-      <h4>
-        Recipe Square |
-        <a href="https://github.com/hzeng33/Recipe-Square">GitHub Link</a> | Apr
-        2023 - May 2023
-      </h4>
-      <p>
-        Recipe Square is a simple recipe sharing platform that enable users to
-        search for recipes and to share their favorite recipes. It also allows
-        users to perform the CRUD (create, read, update, delete) operations.
-      </p>
-
-      <h4>
-        Fitopolis |
-        <a href="https://github.com/irao12/fitopolis">GitHub Link</a> | Oct 2022
-        - Dec 2022
-      </h4>
-      <p>
-        Built an full-stack ecommerce website within a team of 3 that enabled
-        users to buy and sell second-hand sport items.
-      </p>
-
-      <h4>
-        Learn Morse Code |
-        <a href="https://github.com/hzeng33/Learn-Morse-Code">GitHub Link</a> |
-        May 2023
-      </h4>
-      <p>
-        This is a simple Morse Code learning app built using React. My team
-        built this web app for educational purpose. Students who are interested
-        in crytography can learn the Morse Code by playing a practice game on
-        the app. It is also a nostalgia that Morse Code is a historic method of
-        communication that was widely used in the past.
-      </p>
-
-      <h4>
-        Web Based Text Parser |
-        <a href="https://venus.cs.qc.cuny.edu/~zeha6333/cs355/parse.html"
-          >Webpage Link</a
-        >
-        | Aug 2022
-      </h4>
-      <p>
-        A web-based parser of literary texts that will report on the word
-        frequencies of the texts being parsed. This has applications in general,
-        but especially to the rising field known as "Digital Humanities.
-      </p>
+          and achieved patients' satisfactory rate above 95%. Additionally,
+          Scheduled and confirmed patients’ next-day appointments.
+        </div>
+      </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <table>
-        <tr>
-          <td>Programming Languages:</td>
-          <td>Java, JavaScript, HTML5, CSS, Python</td>
-        </tr>
-        <tr>
-          <td>Databases:</td>
-          <td>SQL, PostgreSQL, MySQL</td>
-        </tr>
-        <tr>
-          <td>Tools and Platforms:</td>
-          <td>GitHub, Git, VSCode, Eclipse</td>
-        </tr>
-        <tr>
-          <td>Spoken Languages:</td>
-          <td>Mandarin, Cantonese</td>
-        </tr>
-      </table>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
     </section>
 
     <section id="connect">
       <h2>Connect</h2>
-      <ul>
-        <li><a href="hzeng9310@gmail.com">Email</a></li>
-        <li><a href="https://www.linkedin.com/in/hzeng33">Linkedin</a></li>
-        <li><a href="https://www.github.com/hzeng33">GitHub</a></li>
-      </ul>
+      <div class="connect-container">
+        <a href="https://mail.google.com" class="fa fa-envelope"></a>
+        <a
+          href="https://www.linkedin.com/in/hzeng33"
+          class="fa fa-linkedin"
+        ></a>
+        <a href="https://www.github.com/hzeng33" class="fa fa-github"></a>
+      </div>
     </section>
   </body>
 </html>
