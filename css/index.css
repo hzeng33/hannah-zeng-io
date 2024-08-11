@@ -1,20 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 body {
   background-color: mintcream;
-  font-family: "Literata", serif;
-  margin: 60px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+  margin: 25px auto;
 }
 
-.header {
+/*Header section*/
+.container {
+  width: 100%;
   display: flex;
-  align-items: flex-end;
-  padding: 10px;
+  flex-direction: column;
+}
+
+.upper-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .profile-image {
-  height: 250px;
   border-radius: 50%;
+  margin: 2em;
+  width: 10vw;
   border: 6px solid #2e6878;
   margin-right: 20px;
 }
@@ -23,10 +34,11 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 50px;
+  justify-content: center;
 }
 
 .name {
-  font-size: 60px;
+  font-size: 65px;
   margin: 0;
   color: #16537e;
 }
@@ -36,22 +48,85 @@ body {
   margin: 0;
 }
 
+.container ul {
+  list-style-type: none;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+li a {
+  text-decoration: none;
+  color: #2a6571;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+li a:hover {
+  text-decoration: underline;
+  background-color: rgb(166, 217, 236);
+}
+
 section {
   padding: 10px;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-section h2 {
+section > h2 {
   text-align: center;
   font-size: 25px;
+  box-shadow: rgb(119, 204, 249) 0px 5px 15px -10px;
+  width: fit-content;
+  padding: 0 10px;
 }
 
+/*About section*/
 #about {
   border-bottom: 1px solid black;
 }
 
+#about p {
+  padding: 20px;
+  margin: 2px auto;
+  text-align: center;
+}
+
+/*Experience section*/
 #experience {
   border-bottom: 1px solid black;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+}
+
+.job-title-date-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.job-title {
+  flex: 2;
+  justify-content: flex-start;
+}
+
+.job-data {
+  justify-content: flex-end;
+}
+
+.job-description {
+  margin-bottom: 30px;
 }
 
 #project {
@@ -60,4 +135,44 @@ section h2 {
 
 #skills {
   border-bottom: 1px solid black;
+}
+
+/*Connect section*/
+.connect-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.connect-container > a {
+  margin: 0 10px;
+}
+
+.fa {
+  padding: 12px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-envelope {
+  background: red;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-github {
+  background: rgb(33, 32, 32);
+  color: white;
 }
