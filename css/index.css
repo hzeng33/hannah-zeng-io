@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 body {
   background-color: mintcream;
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 20px;
-  margin: 25px auto;
+  margin: 20 auto;
 }
 
 /*Header section*/
@@ -25,44 +25,48 @@ body {
 .profile-image {
   border-radius: 50%;
   margin: 2em;
-  width: 10vw;
-  border: 6px solid #2e6878;
-  margin-right: 20px;
+  width: 8.5em;
+  border: 8px solid #2e6878;
+  margin-right: 2em;
 }
 
 .header-content {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 2em;
   justify-content: center;
 }
 
 .name {
-  font-size: 65px;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5.8rem;
   margin: 0;
   color: #16537e;
 }
 
 .subtitle {
-  font-size: 28px;
+  font-size: 1.3rem;
   margin: 0;
+  text-align: center;
 }
 
-.container ul {
+#nav-bar ul {
   list-style-type: none;
   display: flex;
   flex: 1;
   justify-content: center;
   overflow: hidden;
-  margin: 20px auto;
+  margin: 2em auto;
 }
 
 li a {
   text-decoration: none;
   color: #2a6571;
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.3em;
 }
 
 li a:hover {
@@ -71,44 +75,39 @@ li a:hover {
 }
 
 section {
-  padding: 10px;
-  margin: 20px;
+  padding: 0.3em;
+  margin: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 
 section > h2 {
   text-align: center;
-  font-size: 25px;
+  font-size: 1.8rem;
   box-shadow: rgb(119, 204, 249) 0px 5px 15px -10px;
   width: fit-content;
-  padding: 0 10px;
+  padding: 0 0.3em;
 }
 
 /*About section*/
-#about {
-  border-bottom: 1px solid black;
-}
-
 #about p {
-  padding: 20px;
-  margin: 2px auto;
+  padding: 1.5em;
+  margin: 0.5em auto;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 /*Experience section*/
-#experience {
-  border-bottom: 1px solid black;
-}
-
 .experience-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px;
-  padding: 20px;
+  margin: 0.3em;
+  padding: 0.5em;
+  font-size: 1.2rem;
 }
 
 .job-title-date-container {
@@ -126,18 +125,14 @@ section > h2 {
 }
 
 .job-description {
-  margin-bottom: 30px;
-}
-
-#project {
-  border-bottom: 1px solid black;
-}
-
-#skills {
-  border-bottom: 1px solid black;
+  margin-bottom: 1.5em;
 }
 
 /*Connect section*/
+#connect {
+  border-bottom: 0;
+}
+
 .connect-container {
   display: flex;
   flex-direction: row;
@@ -145,16 +140,16 @@ section > h2 {
 }
 
 .connect-container > a {
-  margin: 0 10px;
+  margin: 0 0.5em;
 }
 
 .fa {
-  padding: 12px;
-  font-size: 30px;
-  width: 30px;
+  padding: 0.8em;
+  font-size: 3rem;
+  width: 30%;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 0.5em 0.2em;
   border-radius: 50%;
 }
 
@@ -175,4 +170,63 @@ section > h2 {
 .fa-github {
   background: rgb(33, 32, 32);
   color: white;
+}
+
+@media (width <= 400px) {
+  .name {
+    text-align: center;
+    margin-bottom: 0.3em;
+  }
+}
+
+@media (width <= 800px) {
+  .upper-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 4rem;
+    align-self: center;
+  }
+
+  .subtitle {
+    align-self: center;
+  }
+
+  .profile-image {
+    order: 2;
+    align-self: center;
+  }
+
+  .header-content {
+    order: 0;
+  }
+
+  #nav-bar ul {
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 78%;
+    padding: 0.5em;
+  }
+
+  li a {
+    background-color: bisque;
+    margin-bottom: 0.3em;
+  }
+
+  li a:hover {
+    text-decoration: none;
+    color: rgb(205, 238, 255);
+    background-color: rgb(42, 44, 53);
+  }
+
+  .job-title-date-container {
+    flex-direction: column;
+  }
+
+  .job-title {
+    color: darkblue;
+  }
 }
