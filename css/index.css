@@ -9,10 +9,6 @@ body {
   margin: 20 auto;
 }
 
-body > *:last-child {
-  border-bottom: none;
-}
-
 /*======================================
             Header section
 ========================================*/
@@ -91,6 +87,10 @@ section {
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid black;
+}
+
+section:last-child {
+  border-bottom: 0;
 }
 
 section > h2 {
@@ -187,7 +187,6 @@ section > h2 {
 /*============================================
 Form and message field
 +++++++++++++++++++++++++++++++++++++++++=++++*/
-
 
 /*==============================================
               Media queries
