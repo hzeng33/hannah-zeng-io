@@ -29,7 +29,20 @@ for (let i = 0; i < skills.length; i++) {
 }
 
 /**Handle Message Form Submit */
-const messageForm = document.getElementById("leave_message");
+const messageForm = document.querySelector(`form[name="leave_message"]`);
+
+const messageSection = document.getElementById("messages");
+const messageList = messageSection.querySelector("ul");
+
+// Function to show or hide the messages section
+const showMessages = () => {
+  if (messageList.children.length > 0) {
+    messageSection.style.display = "block";
+  } else {
+    messageSection.style.display = "none";
+  }
+};
+
 const handleSubmit = (event) => {
   event.preventDefault();
 
@@ -41,8 +54,6 @@ const handleSubmit = (event) => {
   console.log(usersEmail);
   console.log(usersMessage);
 
-  const messageSection = document.getElementById("messages");
-  const messageList = messageSection.querySelector("ul");
   const newMessage = document.createElement("li");
 
   newMessage.innerHTML = `
@@ -57,17 +68,17 @@ const handleSubmit = (event) => {
   removeButton.addEventListener("click", (event) => {
     const entry = removeButton.parentNode;
     entry.remove();
+    showMessages();
   });
 
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
 
-  if (messageList.children.length === 0) {
-    messageSection.style.display = "none";
-  }
+  showMessages();
 
   // Clear the form
   event.target.reset();
 };
 
 messageForm.addEventListener("submit", handleSubmit);
+document.addEventListener("DOMContentLoaded", showMessages);
