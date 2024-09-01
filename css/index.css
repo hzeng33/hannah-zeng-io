@@ -89,9 +89,13 @@ section {
   border-bottom: 1px solid black;
 }
 
+section:last-child {
+  border-bottom: 0;
+}
+
 section > h2 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   box-shadow: rgb(119, 204, 249) 0px 5px 15px -10px;
   width: fit-content;
 }
@@ -139,14 +143,12 @@ section > h2 {
 /*============================
       Connect section
 ==============================*/
-#connect {
-  border-bottom: 0;
-}
 
 .connect-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 1em;
 }
 
 .connect-container > a {
@@ -181,6 +183,10 @@ section > h2 {
   background: rgb(33, 32, 32);
   color: white;
 }
+
+/*============================================
+Form and message field
++++++++++++++++++++++++++++++++++++++++++=++++*/
 
 /*==============================================
               Media queries
