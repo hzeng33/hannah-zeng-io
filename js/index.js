@@ -30,55 +30,154 @@ for (let i = 0; i < skills.length; i++) {
 
 /**Handle Message Form Submit */
 const messageForm = document.querySelector(`form[name="leave_message"]`);
-
-const messageSection = document.getElementById("messages");
+const messageSection = document.getElementById("message-section");
 const messageList = messageSection.querySelector("ul");
+messageSection.style.display = "none";
 
-// Function to show or hide the messages section
-const showMessages = () => {
-  if (messageList.children.length > 0) {
-    messageSection.style.display = "block";
-  } else {
-    messageSection.style.display = "none";
-  }
-};
+let idCounter = 0;
+//create unique id's for entries
+//Closure on idCounter
 
-const handleSubmit = (event) => {
+function makeId() {
+  let id = "entry" + idCounter++;
+  return id;
+}
+//save entries by id so their content can initialize the edit form
+let entryById = {};
+
+messageForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let usersName = event.target.usersName.value;
-  let usersEmail = event.target.usersEmail.value;
-  let usersMessage = event.target.usersMessage.value;
+  let name = event.target.usersName.value;
+  let email = event.target.usersEmail.value;
+  let message = event.target.usersMessage.value;
+  console.log("Name: ", name);
+  console.log("Email: ", email);
+  console.log("Message: ", message);
 
-  console.log(usersName);
-  console.log(usersEmail);
-  console.log(usersMessage);
-
+  let uid = makeId();
   const newMessage = document.createElement("li");
+  newMessage.classList.add("message-item"); //for styling purpose
 
-  newMessage.innerHTML = `
-  <a href="mailto:${usersEmail}">${usersName}</a>
-  <span>: ${usersMessage}</span>
-`;
+  newMessage.innerHTML = `<a href="mailto:${email}">${name}</a> <span>wrote: ${message}</span>`;
+  newMessage.setAttribute("id", uid);
 
-  const removeButton = document.createElement("button");
-  removeButton.textContent = "Remove";
-  removeButton.setAttribute("type", "button");
+  entryById[uid] = {
+    usersName: name,
+    usersEmail: email,
+    usersMessage: message,
+  };
 
-  removeButton.addEventListener("click", (event) => {
-    const entry = removeButton.parentNode;
-    entry.remove();
-    showMessages();
-  });
+  newMessage.appendChild(makeEditButton());
+  newMessage.appendChild(makeRemoveButton());
 
-  newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
+  messageForm.reset(); //clear the form
+  messageSection.style.display = "flex";
+});
 
-  showMessages();
+//Create remove button in parentNode
+function makeRemoveButton() {
+  let removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.type = "button";
+  removeButton.className = "remove-btn";
+  removeButton.addEventListener("click", () => {
+    let entry = removeButton.parentNode;
+    let uid1 = entry.getAttribute("id");
+    delete entryById[uid1];
+    entry.remove();
+    if (messageList.childElementCount === 0) {
+      messageSection.style.display = "none";
+    }
+  });
+  return removeButton;
+}
 
-  // Clear the form
-  event.target.reset();
-};
+//Create edit button in parentNode
+function makeEditButton() {
+  let editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  editButton.type = "button";
+  editButton.className = "edit-btn";
 
-messageForm.addEventListener("submit", handleSubmit);
-document.addEventListener("DOMContentLoaded", showMessages);
+  editButton.addEventListener("click", () => {
+    //adds an edit button with listener to its parent node
+    let entry = editButton.parentNode;
+
+    //disable the edit button while editing
+    editButton.style.display = "none";
+
+    //disable the remove button while editing
+    entry.querySelector("button.remove-btn").style.display = "none";
+
+    //get the entry's unique id so its content can be used in the form
+    let uid = entry.getAttribute("id");
+    let cloneForm = messageForm.cloneNode(true);
+    cloneForm.className = "edit-message-form";
+    cloneForm.usersName.value = entryById[uid].usersName;
+    cloneForm.usersEmail.value = entryById[uid].usersEmail;
+    cloneForm.usersMessage.value = entryById[uid].usersMessage;
+    entry.appendChild(cloneForm);
+
+    cloneForm.addEventListener("submit", function editMessage(event) {
+      event.preventDefault();
+
+      entryById[uid].usersName = event.target.usersName.value;
+      entryById[uid].usersEmail = event.target.usersEmail.value;
+      entryById[uid].usersMessage = event.target.usersMessage.value;
+      let newEntry = document.createElement("li");
+      newEntry.classList.add("message-item");
+      newEntry.setAttribute("id", uid);
+      newEntry.innerHTML = `<a href="mailto:${entryById[uid].usersEmail}">${entryById[uid].usersName}</a> <span>wrote: ${entryById[uid].usersMessage}</span>`;
+      newEntry.appendChild(makeEditButton());
+      newEntry.appendChild(makeRemoveButton());
+      entry.parentNode.replaceChild(newEntry, entry);
+    });
+  });
+  return editButton;
+}
+
+//Fetch GitHub repos
+const projectSection = document.getElementById("projects");
+const projectList = projectSection.querySelector("ul");
+const reposToDisplay = [
+  "build-project-lobby-system",
+  "Crypto_Hustle_Pro",
+  "Flixster",
+  "Instagram-Clone",
+  "Learn-Morse-Code",
+  "Recipe-Square",
+  "Text-Parser",
+  "Twitter-Client",
+  "WebsiteCapture",
+];
+
+fetch("https://api.github.com/users/hzeng33/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Fetch request failed.");
+    }
+    return response.json();
+  })
+  .then((repoData) => {
+    const repositories = repoData;
+    //console.log(repositories);
+
+    const filteredRepos = repositories.filter((repo) =>
+      reposToDisplay.includes(repo.name)
+    );
+    filteredRepos.forEach((repo) => {
+      const project = document.createElement("li");
+      const link = document.createElement("a");
+      link.textContent = repo.name;
+      link.href = repo.html_url;
+      link.target = "_blank";
+
+      project.appendChild(link);
+      projectList.appendChild(project);
+    });
+  })
+  .catch((error) => {
+    console.error("Error occurred: ", error);
+  });
