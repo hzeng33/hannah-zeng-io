@@ -6,7 +6,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  margin: 2em auto;
+  margin: 0.2em auto;
 }
 
 /*======================================
@@ -156,9 +156,57 @@ section > h2 {
   color: black;
 }
 
+/*============================================
+Form and message field
++++++++++++++++++++++++++++++++++++++++++=++++*/
+form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+input,
+textarea {
+  padding: 10px 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(11, 82, 108);
+  border-radius: 0.8em;
+}
+
+button {
+  align-self: center;
+  width: fit-content;
+  background-color: rgb(79, 131, 177);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.2em;
+  border-radius: 0.3em;
+}
+
+.edit-btn,
+.remove-btn {
+  width: fit-content;
+  background-color: rgb(79, 131, 177);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  margin-left: 0.5em;
+}
+
 /*============================
       Connect section
 ==============================*/
+#connect {
+  border-bottom: none;
+}
 
 .connect-container {
   display: flex;
@@ -198,51 +246,6 @@ section > h2 {
 .fa-github {
   background: rgb(33, 32, 32);
   color: white;
-}
-
-/*============================================
-Form and message field
-+++++++++++++++++++++++++++++++++++++++++=++++*/
-form {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-}
-
-input,
-textarea {
-  padding: 10px 10px;
-  margin: 5px 0;
-  border: 1px solid rgb(11, 82, 108);
-  border-radius: 0.8em;
-}
-
-button {
-  align-self: center;
-  width: fit-content;
-  background-color: rgb(79, 131, 177);
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  display: inline-block;
-  font-size: 1.2rem;
-  padding: 0.2em;
-  border-radius: 0.3em;
-}
-
-.remove-btn,
-.remove-btn {
-  width: fit-content;
-  background-color: rgb(79, 131, 177);
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  display: inline-block;
-  font-size: 1.2rem;
-  padding: 0.2em;
-  border-radius: 0.3em;
-  margin-left: 0.5em;
 }
 
 /*==============================================

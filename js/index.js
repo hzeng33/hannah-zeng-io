@@ -51,9 +51,9 @@ messageForm.addEventListener("submit", (event) => {
   let name = event.target.usersName.value;
   let email = event.target.usersEmail.value;
   let message = event.target.usersMessage.value;
-  console.log("Name: ", name);
-  console.log("Email: ", email);
-  console.log("Message: ", message);
+  //console.log("Name: ", name);
+  //console.log("Email: ", email);
+  //console.log("Message: ", message);
 
   let uid = makeId();
   const newMessage = document.createElement("li");
