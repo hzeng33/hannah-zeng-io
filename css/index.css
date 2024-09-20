@@ -9,6 +9,39 @@ body {
   margin: 0.2em auto;
 }
 
+/*========================================
+            Navigation bar
+==========================================*/
+.nav-bar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: #16537e;
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin: 0.2em auto;
+  padding: 0.3em;
+}
+
+li a {
+  text-decoration: none;
+  text-align: center;
+  color: #fdffff;
+  font-size: 2rem;
+  font-weight: 450;
+  margin: 0.5em 0.5em;
+}
+
+li a:hover {
+  text-decoration: underline;
+  background-color: rgb(166, 217, 236);
+}
+
 /*======================================
             Header section
 ========================================*/
@@ -26,9 +59,10 @@ body {
 
 .profile-image {
   border-radius: 50%;
-  margin: 2em;
-  width: 8.5em;
-  border: 8px solid #2e6878;
+  margin: 2.5em;
+  width: 10em;
+  border: 5px solid #2e6878;
+  margin-top: 5em;
   margin-right: 2em;
 }
 
@@ -54,28 +88,6 @@ body {
   text-align: center;
 }
 
-#nav-bar ul {
-  list-style-type: none;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  overflow: hidden;
-  margin: 2em auto;
-}
-
-li a {
-  text-decoration: none;
-  color: #2a6571;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0.3em;
-}
-
-li a:hover {
-  text-decoration: underline;
-  background-color: rgb(166, 217, 236);
-}
-
 /*=====================================
       General section styling
 =======================================*/
@@ -91,7 +103,7 @@ section {
 
 section > h2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   box-shadow: rgb(119, 204, 249) 0px 5px 15px -10px;
   width: fit-content;
 }
@@ -152,13 +164,23 @@ section > h2 {
   border-radius: 0.5rem;
   text-align: center;
   background-color: rgba(55, 175, 227, 0.66);
-  padding: 0.5em;
+  padding: 0.2em;
   color: black;
+  font-size: 2rem;
+}
+
+/*============================================
+        Project section
+=============================================*/
+.project-list li a {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
 }
 
 /*============================================
 Form and message field
-+++++++++++++++++++++++++++++++++++++++++=++++*/
+==============================================*/
 form {
   box-sizing: border-box;
   display: flex;
@@ -251,14 +273,33 @@ button {
 /*==============================================
               Media queries
   ==============================================*/
-@media (width <= 400px) {
+@media (max-width: 420px) {
   .name {
     text-align: center;
     margin-bottom: 0.3em;
   }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+
+  .skill-list li {
+    font-size: 1.2rem;
+  }
+
+  .project-list li a {
+    font-size: 1.5rem;
+  }
 }
 
-@media (width <= 800px) {
+@media (max-width: 890px) {
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .upper-content {
     display: flex;
     flex-direction: column;
@@ -280,25 +321,6 @@ button {
 
   .header-content {
     order: 0;
-  }
-
-  #nav-bar ul {
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    max-width: 78%;
-    padding: 0.5em;
-  }
-
-  li a {
-    background-color: bisque;
-    margin-bottom: 0.3em;
-  }
-
-  li a:hover {
-    text-decoration: none;
-    color: rgb(205, 238, 255);
-    background-color: rgb(42, 44, 53);
   }
 
   .job-title-date-container {

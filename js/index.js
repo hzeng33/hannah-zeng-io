@@ -1,3 +1,4 @@
+
 /**Create and add a footer */
 const footer = document.createElement("footer");
 document.body.appendChild(footer);
