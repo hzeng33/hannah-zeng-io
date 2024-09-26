@@ -40,6 +40,7 @@ li a {
 li a:hover {
   text-decoration: underline;
   background-color: rgb(166, 217, 236);
+  color: black;
 }
 
 /*======================================
@@ -60,7 +61,8 @@ li a:hover {
 .profile-image {
   border-radius: 50%;
   margin: 2.5em;
-  width: 10em;
+  width: 9rem;
+  height: 13rem;
   border: 5px solid #2e6878;
   margin-top: 5em;
   margin-right: 2em;
@@ -194,6 +196,10 @@ textarea {
   margin: 5px 0;
   border: 1px solid rgb(11, 82, 108);
   border-radius: 0.8em;
+}
+
+.message-item a {
+  color: black;
 }
 
 button {
